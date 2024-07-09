@@ -1,0 +1,273 @@
+ocurrance - all patterns ++
+factorial++
+prime number ++
+ovals & const ++
+leap year
+palindrome ++
+reverse - all patern++
+Armstrong number+
+fibonachi series ++
+swap - both pattern ++
+hashmap function
+oops javascript
+even or odd++
+patterns
+
+-------------------------------------------------------------------------------
+
+//SWAP TWO NUMBERS USING TWO VARIABLES
+let a = 2, b = 3;
+let temp = a;
+a = b;
+b = temp;
+console.log("a=" + a + " "+ "b=" + b);
+
+---------------------------------------------------------------------------------
+
+//SWAP TWO NUMBERS WITHOUT USING TWO VARIABLES
+let a = 2, b = 3;
+a = a + b;
+b = a - b;
+a = a - b;
+console.log("a=" + a + " "+ "b=" + b)
+
+---------------------------------------------------------------------------------
+
+
+// FIBONACHI SERIES
+let num = 7;
+let a = 0, b = 1, c;
+for (let i = 0; i < num; i++){
+    c = a + b;
+    a = b;
+    b = c;
+    console.log(c);
+}
+
+---------------------------------------------------------------------------------
+
+//PALINDROME OF STRING
+let str ="madamew";
+let rev = "";
+for (let i = str.length; i >= 0; i--){
+      rev=rev+str.charAt(i)
+}
+console.log(rev)
+if (rev == str) {
+    console.log("its a palindrome");
+} else {
+    console.log("not a palindrome")
+}
+
+----------------------------------------------------------------------------------
+
+//PALINDROME OF NUMBER
+let num = 141;
+let numcontain = num;
+let rev = 0;
+while (num > 0) {
+    rem = num % 10; //1 4
+rev = rev * 10 + rem; //1 14
+    num = Math.floor(num / 10); //14 1
+}
+console.log(rev);
+if (rev == numcontain) {
+    console.log("its a palindrome");
+} else {
+    console.log("not a palindrome")
+}
+
+----------------------------------------------------------------------------------
+
+//PRIME NUMBER
+let num = 3;
+let prime = true;
+for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+        prime = false;
+    }
+}
+    if (prime && num >= 1) {
+        console.log("prime no")
+    } else {
+    console.log("not a prime no")
+}
+
+-------------------------------------------------------------------------------------
+
+// FACTORIAL
+let num = 3;
+let factorial = 1
+for (let i = 1; i <= num; i++){
+    factorial*= i;
+}
+console.log(factorial);
+
+-------------------------------------------------------------------------------------
+
+//EVEN OR ODD
+let num = 7;
+if (num % 2 == 0) {
+    console.log("even number")
+} else {
+    console.log("odd number");
+}
+
+------------------------------------------------------------------------------------
+
+//REVERSE ALL THE CHARECTERS IN A STRING
+let strv = "omagu turu lub";
+let str = strv.split(" ");
+let rev=" "
+for (let i = str.length-1; i >= 0; i--){
+    rev = rev+ str[i];
+}
+console.log(rev);
+
+--------------------------------------------------------------------------------------
+
+//REVERSE ALL NUMBERS IN AN ARRAY
+let arr = [1, 2, 3, 4, 5, 6];
+let rev = [];
+for (let i = arr.length - 1; i >= 0; i--){
+    rev = rev + arr[i];
+}
+console.log(rev)
+
+
+-------------------------------------------------------------------------------------                                 
+
+
+// REVERSE ALL THE WORDS IN A STRING
+function reverseWordsInString(str) {
+    let result = '';
+    let wordStart = 0;
+
+    for (let i = 0; i <= str.length; i++) {
+        if (i === str.length || str[i] === ' ') {
+            // Reached the end of a word or the end of the string
+            for (let j = i - 1; j >= wordStart; j--) {
+                result += str[j];
+            }
+            // Add a space after the word if not at the end of the string
+            if (i !== str.length) {
+                result += ' ';
+            }
+            // Update the start of the next word
+            wordStart = i + 1;
+        }
+    }
+
+    return result;
+}
+str = "oh my goodness";
+reversedstr = reverseWordsInString(str);
+console.log(reversedstr);
+
+------------------------------------------------------------------------------------
+
+//OCURRENCE ALL LETTERS IN A STRING
+function letteroccur(str){
+    let lettercount={}
+    str = str.toLowerCase();
+    for (let i = 0; i <= str.length; i++){
+        let char = str[i];
+        if (char >= 'a' && char <= 'z') {
+            if (lettercount[char]) {
+                lettercount[char]++
+            } else {
+                lettercount[char] = 1;
+            }
+        }
+    }
+    return lettercount;
+}
+
+let str = "jahanum mai jaoo"
+let goodboy = letteroccur(str);
+console.log(goodboy);
+
+-------------------------------------------------------------------------------------
+
+
+//OCCURENCE OF NUMBERS IN AN ARRAY
+function numoccur(arr) {
+    numcount = {};
+    for (let i = 0; i < arr.length; i++){
+        let count = arr[i];
+        if (numcount[count]) {
+            numcount[count]++
+        } else {
+            numcount[count] = 1;
+        }
+    }
+    return numcount;
+} 
+let arr = [1, 2, 3, 4, 2, 2, 1, 3, 5, 6, 3, 2, 2, 1];
+let vishal = numoccur(arr);
+console.log(vishal);
+
+-------------------------------------------------------------------------------------
+
+//OCURRENCE ALL WORDS IN A STRING
+function wordoccur(str) {
+    let word = str.split("");
+    let occur = {};
+    for (let i = 0; i < word.length; i++){
+        count=word[i]
+        if (occur[count]) {
+            occur[count]++
+        } else {
+            occur[count]=1
+        }
+    }
+    return occur;
+}
+
+let str = "omagu turu lub omagu lub"
+let vishal = wordoccur(str);
+console.log(vishal)
+
+---------------------------------------------------------------------------------------------
+
+//OVALS AND CONSTANTS
+let str = "i love my india love";
+let char = {};
+for (let i = 0; i < str.length; i++){
+    if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
+        if (char[str[i]]) {
+            char[str[i]]++;
+        } else {
+            char[str[i]]=1
+        }
+    }
+}
+console.log(char)
+
+
+-------------------------------------------------------------------------------------------------
+
+//find the count of charecters of each word in a string
+
+let str = "i love my india ji haa";
+let count = 0
+let lettercount = {};
+for (let i = 0; i < str.length; i++) {
+    if (str[i] != " ") {
+        count++
+    } else {
+    console.log(count);
+    count = 0;
+    }  
+}
+console.log(count)
+ 
+
+
+
+
+
+
+
+
+
